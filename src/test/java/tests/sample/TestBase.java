@@ -14,6 +14,7 @@ public class TestBase {
     public static void setup(){
         Configuration.browser = BrowserstackMobileDriver.class.getName();
         Configuration.startMaximized = false;
+        Configuration.browserSize = null;
 
     }
 
