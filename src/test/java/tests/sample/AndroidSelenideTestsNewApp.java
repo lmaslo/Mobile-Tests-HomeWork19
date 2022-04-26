@@ -5,18 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.files.DownloadActions.click;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
-public class AndroidSelenideTests {
+public class AndroidSelenideTestsNewApp extends TestBase {
     @Test
-    void searchTest(){
-
+    void searchTest() {
+        $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
         $(MobileBy.AccessibilityId("Search Wikipedia")).click();
         $(MobileBy.id("org.wikipedia.alpha:id/search_src_text")).setValue("BrowserStack");
         $$(byClassName("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
-
-
-
     }
 }

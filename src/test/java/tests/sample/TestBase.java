@@ -1,7 +1,7 @@
 package tests.sample;
 
 import com.codeborne.selenide.Configuration;
-import helpers.BrowserstackMobileDriver;
+import drivers.BrowserstackMobileDriverNewApp;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -9,13 +9,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 
 public class TestBase {
-
     @BeforeAll
-    public static void setup(){
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
+    public static void setup() {
+        Configuration.browser = BrowserstackMobileDriverNewApp.class.getName();
         Configuration.startMaximized = false;
         Configuration.browserSize = null;
-
     }
 
     @BeforeEach
