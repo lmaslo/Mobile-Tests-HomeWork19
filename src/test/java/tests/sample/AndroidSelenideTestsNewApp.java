@@ -14,11 +14,6 @@ import static io.qameta.allure.Allure.step;
 public class AndroidSelenideTestsNewApp extends TestBase {
     @Test
     void searchTest() {
-        //Добавить алюр степы
-        //добавить owner
-        //добавить видео?
-        //сделать сборку в дженкинс
-
 
         step("Skip information", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
