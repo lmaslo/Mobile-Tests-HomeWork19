@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -99,30 +100,24 @@ public class AndroidSelenideTestsNewApp extends TestBase {
 
 
         $(AppiumBy.accessibilityId("Saved")).click();
-       /* $(AppiumBy.xpath("//android.widget.FrameLayout[@content-desc=\"Saved\"]/android.widget.FrameLayout/android.widget.ImageView"))
-                .click();*/
+        $(AppiumBy.id("org.wikipedia.alpha:id/messageTitleView"))
+                .shouldHave(text("Sync reading lists"));
 
-
-        /*$(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget." +
-                "FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView"))
-                .shouldHave(text("Saved"));*/
 
 
         $(AppiumBy.accessibilityId("Search")).click();
-       /* $(AppiumBy.id("org.wikipedia.alpha:id/history_title")).shouldHave(text("History"));*/
+        $(AppiumBy.id("org.wikipedia.alpha:id/history_title")).shouldHave(text("History"));
 
 
 
 
         $(AppiumBy.accessibilityId("Edits")).click();
-       /* $(AppiumBy.xpath("//android.widget.FrameLayout[@content-desc=\"Edits\"]/android.widget.FrameLayout/android.widget.ImageView"))
-                .click();
-        $(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget." +
-                "FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView"))
-                .shouldHave(text("Saved"));*/
+        $(AppiumBy.id("org.wikipedia.alpha:id/messageTitleView")).shouldHave(text("Did you know that everyone can edit Wikipedia?"));
+
 
 
         $(AppiumBy.accessibilityId("More")).click();
+        $(AppiumBy.id("org.wikipedia.alpha:id/main_drawer_account_container")).shouldHave(visible);
 
 
     }
