@@ -11,17 +11,21 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
+import static drivers.DeviceDriver.getDeviceDriver;
 import static helpers.Attach.getSessionId;
 
 
 public class TestBase {
+    private static final String deviceHost = System.getProperty("deviceHost");
+
     @BeforeAll
     public static void setup() {
 
         addListener("AllureSelenide", new AllureSelenide());
 
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
-        //Configuration.startMaximized = false;
+        //Configuration.browser = BrowserstackMobileDriver.class.getName();
+        Configuration.browser = getDeviceDriver(deviceHost);
+
         Configuration.browserSize = null;
     }
 

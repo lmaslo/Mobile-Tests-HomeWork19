@@ -16,7 +16,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.Attach.getSessionId;
 import static io.qameta.allure.Allure.step;
 
-
+/*
 public class TestBase {
     @BeforeAll
     public static void setup() {
@@ -42,4 +42,4 @@ public class TestBase {
 
         step("Close driver", Selenide::closeWebDriver);
     }
-}
+}*/
